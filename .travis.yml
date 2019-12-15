@@ -2,17 +2,13 @@
 sudo: false
 language: python
 python:
-  - "2.7"
   - "3.4"
   - "3.5"
   - "3.7"
+  - "3.8"
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - python: "3.4"
-    - python: "3.5"
-    - python: "3.7"
 
 env:
   - PIPENV_VERBOSITY=-1
@@ -22,5 +18,6 @@ install:
   - pipenv install --dev
 
 script:
-  - pylint bme280
-  - pytest
+  - pipenv run yapf -q -r bme280
+  - pipenv run pylint --ignore=snapshots bme280 tests
+  - pipenv run pytest

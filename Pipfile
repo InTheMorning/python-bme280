@@ -1,14 +1,16 @@
 [[source]]
 url = 'https://pypi.python.org/simple'
 
-[requires]
-python_version = '2.7'
+#[requires]
+#python_version = '3.x' # Note: not possivle, use pipenv install --three --dev
 
 [packages]
 smbus2 = '*'
 
 [dev-packages]
 mock = '*'
-pylint = '< 2'
-pytest = '< 5'
+pylint = '*'
+pytest = '*'
 snapshottest = '*'
+rope = '*'
+yapf = '*'
